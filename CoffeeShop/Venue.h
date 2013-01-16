@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "Location.h"
+#import "Stats.h"
 
 @interface Venue : NSObject
 
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) Location *location;
+@property (strong, nonatomic) Stats *stats;
 
 @end

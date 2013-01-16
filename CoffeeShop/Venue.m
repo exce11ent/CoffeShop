@@ -10,6 +10,8 @@
 
 @implementation Venue
 
-@synthesize name, location;
+@synthesize name,
+            location,
+            stats;
 
 @end

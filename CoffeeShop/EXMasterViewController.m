@@ -9,6 +9,8 @@
 #import "EXMasterViewController.h"
 #import <RestKit/RestKit.h>
 #import "Venue.h"
+#import "EXVenueCell.h"
+
 #define kCLIENTID "TIGUQRE2PLLF50S5V4FSAP5KJOKI1WJR2I5LFSLFAL2BZIJZ"
 #define kCLIENTSECRET "SLY3Q2HRRKBB0XXPF0DPPTXO2PFIJZ4BV3CK3TJUOG3R14QW"
 
@@ -37,8 +39,13 @@
     RKObjectMapping *locationMapping = [RKObjectMapping mappingForClass:[Location class]];
     [locationMapping addAttributeMappingsFromArray:@[@"address", @"city", @"country", @"crossStreet", @"postalCode", @"state", @"distance", @"lat", @"lng"]];
     RKRelationshipMapping *relation = [RKRelationshipMapping relationshipMappingFromKeyPath:@"location" toKeyPath:@"location" withMapping:locationMapping];
-    
     [venueMapping addPropertyMapping:relation];
+    
+    RKObjectMapping *statsMapping = [RKObjectMapping mappingForClass:[Stats class]];
+    [statsMapping addAttributeMappingsFromArray:@[@"checkinsCount", @"tipCount", @"usersCount"]];
+    RKRelationshipMapping *statsRelation = [RKRelationshipMapping relationshipMappingFromKeyPath:@"stats" toKeyPath:@"stats" withMapping:statsMapping];
+    [venueMapping addPropertyMapping:statsRelation];
+    
     
     RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:venueMapping
                                                                                        pathPattern:nil
@@ -51,7 +58,7 @@
 }
 
 - (void) sendRequest {
-    NSString *latLon = @"49.4,32";
+    NSString *latLon = @"40.7,-74.0";
     NSString *clientID = [NSString stringWithUTF8String:kCLIENTID];
     NSString *clientSecret = [NSString stringWithUTF8String:kCLIENTSECRET];
     
@@ -93,10 +100,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    EXVenueCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VenueCell"];
     Venue *venue = [data objectAtIndex:indexPath.row];
-    cell.textLabel.text = [venue.name length] > 22 ? [venue.name substringToIndex:22] : venue.name;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%.0fm", [venue.location.distance floatValue]];
+    cell.nameLabel.text = [venue.name length] > 25 ? [venue.name substringToIndex:25] : venue.name;
+    cell.distanceLabel.text = [NSString stringWithFormat:@"%.0fm", [venue.location.distance floatValue]];
+    cell.checkinsLabel.text = [NSString stringWithFormat:@"%i checkins", [venue.stats.checkinsCount intValue]];
     return cell;
 }
 

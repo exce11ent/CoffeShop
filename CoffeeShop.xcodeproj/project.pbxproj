@@ -27,6 +27,8 @@
 		BB84EEA916A450230068E3B8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB84EEA216A450230068E3B8 /* Security.framework */; };
 		BB84EEAA16A450230068E3B8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB84EEA316A450230068E3B8 /* SystemConfiguration.framework */; };
 		BB84EEAD16A45DDD0068E3B8 /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = BB84EEAC16A45DDD0068E3B8 /* Venue.m */; };
+		BB873D1E16A68EE10048B66E /* EXVenueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB873D1D16A68EE10048B66E /* EXVenueCell.m */; };
+		BB873D2116A690370048B66E /* Stats.m in Sources */ = {isa = PBXBuildFile; fileRef = BB873D2016A690370048B66E /* Stats.m */; };
 		BB8A43EE16A56E0B002530DF /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8A43ED16A56E0B002530DF /* Location.m */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +97,10 @@
 		BB84EEA316A450230068E3B8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		BB84EEAB16A45DDD0068E3B8 /* Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Venue.h; sourceTree = "<group>"; };
 		BB84EEAC16A45DDD0068E3B8 /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Venue.m; sourceTree = "<group>"; };
+		BB873D1C16A68EE10048B66E /* EXVenueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXVenueCell.h; sourceTree = "<group>"; };
+		BB873D1D16A68EE10048B66E /* EXVenueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXVenueCell.m; sourceTree = "<group>"; };
+		BB873D1F16A690370048B66E /* Stats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stats.h; sourceTree = "<group>"; };
+		BB873D2016A690370048B66E /* Stats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stats.m; sourceTree = "<group>"; };
 		BB8A43EC16A56E0B002530DF /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		BB8A43ED16A56E0B002530DF /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,6 +168,8 @@
 				BB84EE7116A44C070068E3B8 /* EXAppDelegate.h */,
 				BB84EE7216A44C070068E3B8 /* EXAppDelegate.m */,
 				BB84EE7A16A44C070068E3B8 /* MainStoryboard.storyboard */,
+				BB873D1C16A68EE10048B66E /* EXVenueCell.h */,
+				BB873D1D16A68EE10048B66E /* EXVenueCell.m */,
 				BB84EE7D16A44C070068E3B8 /* EXMasterViewController.h */,
 				BB84EE7E16A44C070068E3B8 /* EXMasterViewController.m */,
 				BB8A43EB16A56DD5002530DF /* Model */,
@@ -202,6 +210,8 @@
 				BB84EEAC16A45DDD0068E3B8 /* Venue.m */,
 				BB8A43EC16A56E0B002530DF /* Location.h */,
 				BB8A43ED16A56E0B002530DF /* Location.m */,
+				BB873D1F16A690370048B66E /* Stats.h */,
+				BB873D2016A690370048B66E /* Stats.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -316,6 +326,8 @@
 				BB84EE7F16A44C070068E3B8 /* EXMasterViewController.m in Sources */,
 				BB84EEAD16A45DDD0068E3B8 /* Venue.m in Sources */,
 				BB8A43EE16A56E0B002530DF /* Location.m in Sources */,
+				BB873D1E16A68EE10048B66E /* EXVenueCell.m in Sources */,
+				BB873D2116A690370048B66E /* Stats.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
