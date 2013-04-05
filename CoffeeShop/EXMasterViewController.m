@@ -58,7 +58,7 @@
 }
 
 - (void) sendRequest {
-    NSString *latLon = @"40.7,-74.0";
+    NSString *latLon = @"50.4,30.5";
     NSString *clientID = [NSString stringWithUTF8String:kCLIENTID];
     NSString *clientSecret = [NSString stringWithUTF8String:kCLIENTSECRET];
     
